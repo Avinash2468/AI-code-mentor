@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+void updateValue(int* ptr) {
+    *ptr += 10; // Dereference the pointer to modify the value it points to
+}
+
+int main() {
+    int x = 5;
+    int* p = &x; // p points to x
+    updateValue(p);
+    cout << "Updated value: " << x << endl;
+
+    p = nullptr; // Reset pointer
+    cout << *p << endl; // Uncommenting this line causes undefined behavior
+    return 0;
+}

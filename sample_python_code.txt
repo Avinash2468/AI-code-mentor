@@ -1,0 +1,9 @@
+from sklearn.linear_model import LogisticRegression
+
+data = pd.read_csv('../input/Iris.csv')
+X = data.drop(['Id', 'Species'], axis=1)
+y = data['Species']
+
+logreg = LogisticRegression()
+logreg.fit(X, y)
+y_pred = logreg.predict(X)
